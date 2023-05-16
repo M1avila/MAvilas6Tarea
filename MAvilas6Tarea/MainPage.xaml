@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MAvilas6Tarea.MainPage">
+
+    <StackLayout>
+        <Frame BackgroundColor="Black"  Padding="24" CornerRadius="0">
+            <Label Text="HOLA SEMANA 6" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+       </Frame>
+
+        <Grid>
+            <Grid.RowDefinitions >
+                <RowDefinition Height="25" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Label Text="ID" FontSize="18" Grid.Row="0" Grid.Column="0"/>
+            <Label Text="NOMBRE" FontSize="18" Grid.Row="0" Grid.Column="1"/>
+            <Label Text="APELLIDO" FontSize="18" Grid.Row="0" Grid.Column="2"/>
+            <Label Text="EDAD" FontSize="18" Grid.Row="0" Grid.Column="3"/>
+            <Label Text="ACTUA" FontSize="18" Grid.Row="0" Grid.Column="4"/>
+            <Label Text="ELIMI" FontSize="18" Grid.Row="0" Grid.Column="5"/>
+        </Grid>
+        <Label Text="____________________________________________________________" />
+        <ListView x:Name="lista" ItemSelected="lista_ItemSelected" >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Label x:Name="lblId" Text="{Binding codigo}" Grid.Row="0" Grid.Column="0"/>
+                                <Label x:Name="lblNombre" Text="{Binding nombre}" Grid.Row="0" Grid.Column="1" />
+                                <Label x:Name="lblApellido" Text="{Binding apellido}" Grid.Row="0" Grid.Column="2"/>
+                                <Label x:Name="lbledad" Text="{Binding edad}" Grid.Row="0" Grid.Column="3"/>
+                                <Button x:Name="btnactualiza" Grid.Row="0" Grid.Column="4" BackgroundColor="Green"/>
+                                <Button x:Name="btn eliminar" Grid.Row="0" Grid.Column="5" BackgroundColor="Red"/>
+                                
+                              
+                            </Grid>
+                                    
+
+                        </StackLayout>
+                            
+                    </ViewCell>
+                </DataTemplate>
+
+            </ListView.ItemTemplate>
+
+
+        </ListView>
+        <Button x:Name="btnRegistro" Text="Registrar" Clicked="btnRegistro_Clicked"/>
+    </StackLayout>
+
+</ContentPage>
